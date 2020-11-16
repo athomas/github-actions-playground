@@ -1,0 +1,19 @@
+name: Dart CI
+
+defaults:
+  env:
+    MY_VAR: "a value a day keeps the empty variables at bay"
+
+on:
+  push:
+    branches: [ $default-branch ]
+  pull_request:
+    branches: [ $default-branch ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+  steps:
+    - name: Print var
+      run: echo "${MY_VAR}"
