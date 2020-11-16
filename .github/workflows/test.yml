@@ -11,9 +11,10 @@ on:
     branches: [ $default-branch ]
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
-
-  steps:
-    - name: Print var
-      run: echo "${MY_VAR}"
+    steps:
+      - name: Print var
+        run: echo "${MY_VAR}"
+      - name: Print var
+        run: echo "${MY_VAR}"
