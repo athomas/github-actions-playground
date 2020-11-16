@@ -1,9 +1,5 @@
 name: Test CI
-
-defaults:
-  env:
-    MY_VAR: "a value a day keeps the empty variables at bay"
-
+  
 on:
   push:
     branches: [ $default-branch ]
@@ -15,10 +11,8 @@ on:
 jobs:   
   test:
     env:
-      MY_OTHER_VAR: "another var, another chance"
+      MY_VAR: "a value a day keeps the empty variables at bay"
     runs-on: ubuntu-latest
     steps:
       - name: Print var
         run: echo "${MY_VAR}"
-      - name: Print other var
-        run: echo "${MY_OTHER_VAR}"
