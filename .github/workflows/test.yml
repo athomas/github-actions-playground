@@ -1,8 +1,8 @@
 name: Test CI
 
-defaults:
-  env:
-    MY_VAR: "a value a day keeps the empty variables at bay"
+#defaults:
+#  env:
+#    MY_VAR: "a value a day keeps the empty variables at bay"
 
 on:
   push:
