@@ -2,16 +2,16 @@ name: Test CI
   
 on:
   push:
-    branches: [ $default-branch ]
+    branches: [ main ]
   pull_request:
-    branches: [ $default-branch ]
+    branches: [ main ]
   workflow_dispatch:
-    branches: [ $default-branch ]    
+    branches: [ main ]    
+env:
+  MY_VAR: "a value a day keeps the empty variables at bay"
 
 jobs:   
   test:
-    env:
-      MY_VAR: "a value a day keeps the empty variables at bay"
     runs-on: ubuntu-latest
     steps:
       - name: Print var
