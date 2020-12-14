@@ -13,6 +13,9 @@ env:
 jobs:   
   test:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        shard: [0, 1]
     steps:
       - name: Print var
-        run: echo "${MY_VAR}"
+        run: echo "${MY_VAR} ${{ matrix.shard }} ${{ matrix.shard.length }}"
