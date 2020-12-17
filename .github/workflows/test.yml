@@ -14,5 +14,8 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      - name: Fail
+        run: exit 1
       - name: Print var
+        if: always() && runner.os != 'sugar'
         run: echo "${MY_VAR}"
