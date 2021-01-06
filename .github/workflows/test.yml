@@ -2,7 +2,7 @@ name: Test CI
   
 on:
   push:
-    branches: [ main ]
+    branches: [ main, always-fail ]
   pull_request:
     branches: [ main ]
   workflow_dispatch:
