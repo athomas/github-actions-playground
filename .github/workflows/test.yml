@@ -15,9 +15,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: lookup
-        run: nslookup http://www.microsoft.com
+        run: nslookup www.microsoft.com
       - name: lookup
-        run: nslookup http://pub.invalid
+        run: nslookup pub.invalid
         if: always()
       - name: Fail
         run: exit 1
