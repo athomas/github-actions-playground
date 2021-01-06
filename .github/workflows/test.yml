@@ -14,5 +14,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Print var
-        run: echo "${MY_VAR}"
+      - name: lookup
+        run: nslookup http://pub.invalid
+      - name: Fail
+        run: exit 1
