@@ -14,9 +14,15 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: lookup
+      - name: lookup www.microsoft.com
         run: nslookup www.microsoft.com
-      - name: lookup
+      - name: lookup example.com
+        run: nslookup example.com
+        if: always()
+      - name: lookup invalid-url.foo
+        run: nslookup invalid-url.foo
+        if: always()
+      - name: lookup pub.invalid
         run: nslookup pub.invalid
         if: always()
       - name: Fail
