@@ -14,5 +14,6 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Print var
-        run: echo "${MY_VAR}"
+      - name : machine echo github
+        env : { CONTENT : "${{ toJson(github) }}" }
+        run : "echo $CONTENT"
