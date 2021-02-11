@@ -14,6 +14,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name : machine echo github
+      - run: env
+      - name : echo github
         env : { CONTENT : "${{ toJson(github) }}" }
         run : "echo $CONTENT"
