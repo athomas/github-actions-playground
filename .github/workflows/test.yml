@@ -9,10 +9,13 @@ on:
     branches: [ main ]    
 env:
   MY_VAR: "a value a day keeps the empty variables at bay"
+  VERSION: "stable"
 
 jobs:   
   test:
     runs-on: ubuntu-latest
+    matrix:
+      version: [ "dev", ${{ env.VERSION }} ]
     steps:
       - run: env
       - name : echo github
