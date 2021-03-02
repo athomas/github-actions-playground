@@ -14,8 +14,11 @@ env:
 jobs:   
   test:
     runs-on: ubuntu-latest
-    matrix:
-      version: [ "dev", ${{ env.VERSION }} ]
+    strategy:
+      matrix:
+        version: 
+          - dev
+          - ${{ env.VERSION }}
     steps:
       - run: env
       - name : echo github
