@@ -9,13 +9,13 @@ jobs:
   test:
     runs-on: ${{ matrix.os }}
     strategy:
+      fail-fast: false
       matrix:
         sdk: 
           - dev
           - beta
           - stable
           - 2.18.0-271.0.dev
-          - 2.18.0-271.1.beta
           - 2.18.0-271.2.beta
           - 2.18.0-271.4.beta
         os:
