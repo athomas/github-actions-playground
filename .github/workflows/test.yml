@@ -2,25 +2,17 @@ name: Test CI
   
 on:
   push:
-    branches: [ main, always-fail ]
+    branches: [ main ]
   pull_request:
     branches: [ main ]
   workflow_dispatch:
-    branches: [ main ]    
-env:
-  MY_VAR: "a value a day keeps the empty variables at bay"
-  VERSION: "stable"
 
 jobs:   
   test:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        version: 
-          - dev
-          - ${{ env.VERSION }}
     steps:
-      - run: env
-      - name : echo github
-        env : { CONTENT : "${{ toJson(github) }}" }
-        run : "echo $CONTENT"
+      - run: git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
+      - run: echo "$PWD/depot_tools" >> $GITHUB_PATH
+      - run: mkdir dart-sdk
+      - run: cd dart-sdk
+      - run: fetch dart
