@@ -15,4 +15,5 @@ jobs:
       - run: echo "$PWD/depot_tools" >> $GITHUB_PATH
       - run: mkdir dart-sdk
       - run: cd dart-sdk
-      - run: fetch dart
+      - run: fetch dart --no-history
+      - run: ./sdk/buildtools/linux-amd64/clang/bin/clang --version
